@@ -47,7 +47,7 @@ number of tasks done
  
  
 ## Status
-Project is to step #7
+Finished
 
 
 ## Contact
