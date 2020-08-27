@@ -35,7 +35,7 @@ export default {
     },
     task3:function(x){
       this.listdata.push({id:this.listdata.length,name:x,todo:true})
-    }
+    },
   },
 };
 </script>

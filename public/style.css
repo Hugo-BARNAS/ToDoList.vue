@@ -18,3 +18,16 @@ body{
 .width{
     width: 35vw;
 }
+
+.danger{
+    color:red;
+}
+.prudence{
+    color:orange;
+}
+.good{
+    color:blue;
+}
+.ok{
+    color:green;
+}
