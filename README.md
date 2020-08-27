@@ -18,6 +18,8 @@ Exercice with 7 steps :
 * #4: Create a ListTodo component and give to it the List I received. The ListTodo component will iterate through the Array I received and will call SingleTodo component for each item of the List.
 * #5: Check or uncheck the different tasks in order to see what we still have to do.
 * #6: Add some tasks to make it more dynamic.
+* #7: Create a new component Sentence who will display a different sentence depending of the
+number of tasks done
 
 
 ## Screenshots
