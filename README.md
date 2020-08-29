@@ -24,6 +24,7 @@ number of tasks done
 
 ## Screenshots
 
+![ezgif com-video-to-gif](https://user-images.githubusercontent.com/57058997/91483201-9aa66500-e8a7-11ea-85c5-26839e2726c0.gif)
 
 
 ## Technologies
@@ -46,7 +47,7 @@ number of tasks done
  
  
 ## Status
-Project is to step #7
+Finished
 
 
 ## Contact
