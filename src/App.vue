@@ -1,14 +1,17 @@
 <template>
   <div>
-    <MyJumbotron v-on:strike="test" v-bind:ListD="listdata" v-on:taskname2= "task3"/>
+    <MyHeader/>
+    <MyJumbotron v-on:strike="test" v-bind:ListD="listdata" @taskname2="task3"/>
   </div>
 </template>
 
 <script>
+import MyHeader from "./components/MyHeader";
 import MyJumbotron from "./components/MyJumbotron";
 export default {
   components: { //components => enfants associés aux fichiers
     MyJumbotron,
+    MyHeader
   },
   data() {
     return {
@@ -33,7 +36,7 @@ export default {
         }
       });
     },
-    task3:function(x){
+    task3: function(x){
       this.listdata.push({id:this.listdata.length,name:x,todo:true})
     },
   },

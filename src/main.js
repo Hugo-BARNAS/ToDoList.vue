@@ -16,7 +16,7 @@ Vue.config.productionTip = false
 
 //INSTANCIER LA VARIABLE ROUTES
 
-let routes = new Router({  
+let router = new Router({
   routes: [
     { path: '/new', component: add },
     { path: '/list', component: list, props: { whatToDisplay: "all" } },
@@ -27,7 +27,7 @@ let routes = new Router({
 
 //DECLARATION DANS VUE (ROUTES, APP)
 new Vue({
-  routes,
+  router,
   render: h => h(App),
 }).$mount('#app')
 
