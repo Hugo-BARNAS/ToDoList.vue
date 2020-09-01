@@ -1,13 +1,13 @@
 <template>
   <div>
-    <MyJumbotron @strike="test" :ListD="listdata" v-on:taskname2= "task3"/>
+    <MyJumbotron v-on:strike="test" v-bind:ListD="listdata" v-on:taskname2= "task3"/>
   </div>
 </template>
 
 <script>
 import MyJumbotron from "./components/MyJumbotron";
 export default {
-  components: {
+  components: { //components => enfants associés aux fichiers
     MyJumbotron,
   },
   data() {
