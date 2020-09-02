@@ -5,15 +5,15 @@
         v-for="elem in results"
         :key="elem.id"
         @strike="test1"
+        @refresh-page="refresh"
         :singletodoprops="elem"
       />
     </ul>
   </div>
 </template>
 <script>
-import singletodo from "./singletodo";
+import singletodo from './singletodo'
 import axios from "axios";
-
 export default {
   name: "list",
   props: { whatToDisplay: String },
@@ -26,17 +26,32 @@ export default {
     singletodo,
   },
   mounted() {
+    let that = this
     const url = "http://localhost:3000/todo";
-    if (this.whatToDisplay == "all") {
-      axios.get(url).then((response) => {
+    axios.get(url).then((response) => {
+      if (this.whatToDisplay == "todo") {
+        this.results = response.data.filter((todo) => todo.todo === false);
+        that.$emit('refresh-page');
+      } else if (this.whatToDisplay == "done") {
+        this.results = response.data.filter((todo) => todo.todo === true);
+        that.$emit('refresh-page');
+      } else {
         this.results = response.data;
-        console.log(this.results);
-      });
-    }
+        that.$emit('refresh-page');
+      }
+    });
   },
   methods: {
     test1: function(id) {
       this.$emit("strike", id);
+    },
+    refresh: function() {
+      const url = "http://localhost:3000/todo";
+      if (this.whatToDisplay == "all") {
+        axios.get(url).then((response) => {
+          this.results = response.data;
+        });
+      }
     },
     test: function(id) {
       console.log(id);

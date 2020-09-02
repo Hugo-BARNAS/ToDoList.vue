@@ -14,13 +14,15 @@ import axios from "axios";
 export default {
   props: ["singletodoprops"],
   name: "singletodo",
-  methods:{
-    update:function(){
-      const url =`http://localhost:3000/todo/${this.singletodoprops.id}`
-      axios.put(url, {todo:!this.singletodoprops.todo}).then((response) => {
-        console.log(response)
-      })
-    }
-  }
-}
+  methods: {
+    update: function() {
+      let that = this
+      const url = `http://localhost:3000/todo/${this.singletodoprops.id}`;
+      axios.put(url, { todo: !this.singletodoprops.todo }).then((response) => {
+        console.log(response);
+        that.$emit('refresh-page');
+      });
+    },
+  },
+};
 </script>

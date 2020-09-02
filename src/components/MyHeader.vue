@@ -16,8 +16,8 @@ export default {
     return {
       links: [
         { id: 0, text: "new", page: "./AddForm.vue" },
-        { id: 1, text: "todo", page: "./singletodo.vue" },
-        { id: 2, text: "done", page: "./sentence.vue" },
+        { id: 1, text: "todo", page: "./list.vue" },
+        { id: 2, text: "done", page: "./list.vue" },
         { id: 3, text: "list", page: "./list.vue" },
       ],
     };
