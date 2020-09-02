@@ -8,7 +8,7 @@
       <p>Easy to use, we created this web app just for you!</p>
       <sentence v-bind="{ ListD }"></sentence>
       <hr class="my-4" />
-      <router-view></router-view>
+      <router-view :key="$route.fullPath"></router-view>
     </b-jumbotron>
   </div>
 </template>

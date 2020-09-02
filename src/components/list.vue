@@ -30,10 +30,10 @@ export default {
     const url = "http://localhost:3000/todo";
     axios.get(url).then((response) => {
       if (this.whatToDisplay == "todo") {
-        this.results = response.data.filter((todo) => todo.todo === false);
+        this.results = response.data.filter((todo) => todo.todo);
         that.$emit('refresh-page');
       } else if (this.whatToDisplay == "done") {
-        this.results = response.data.filter((todo) => todo.todo === true);
+        this.results = response.data.filter((todo) => !todo.todo);
         that.$emit('refresh-page');
       } else {
         this.results = response.data;
