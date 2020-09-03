@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router';
-import App from './App.vue'
+import App from './App.vue';
+import store from './store';
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 import "bootstrap-vue/dist/bootstrap-vue-icons.min.css";
@@ -27,6 +28,7 @@ let router = new Router({
 
 //DECLARATION DANS VUE (ROUTES, APP)
 new Vue({
+  store,
   router,
   render: h => h(App),
 }).$mount('#app')

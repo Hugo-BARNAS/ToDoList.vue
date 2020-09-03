@@ -20,9 +20,6 @@ export default {
     sentence,
   },
   methods: {
-    test: function(id) {
-      this.$emit("strike", id);
-    },
     task2: function(y) {
       this.$emit("taskname2", y);
     },
