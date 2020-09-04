@@ -26,12 +26,14 @@ export default {
         this.results = response.data.length;
         let date = new Date();
         let dateString = date.toString();
-        axios.post(url, {
+        let monObjet = {
           name: this.addTask,
           id: this.results,
           createdAt: dateString,
           todo: true,
-        });
+        };
+        axios.post(url, monObjet);
+        this.$store.dispatch("PushData", monObjet);
         console.log(this.results);
       });
     },

@@ -2,7 +2,7 @@
   <div>
     <ul>
       <singletodo
-        v-for="elem in results"
+        v-for="elem in listedData"
         :key="elem.id"
         @refresh-page="refresh"
         :singletodoprops="elem"
@@ -17,7 +17,6 @@ export default {
   name: "list",
   props: { whatToDisplay: String },
 
-
   data() {
     return {
       results: [],
@@ -26,17 +25,12 @@ export default {
   components: {
     singletodo,
   },
-  mounted() {
-    const url = "http://localhost:3000/todo";
-    axios.get(url).then((response) => {
-      if (this.whatToDisplay == "todo") {
-        this.results = response.data.filter((todo) => todo.todo);
-      } else if (this.whatToDisplay == "done") {
-        this.results = response.data.filter((todo) => !todo.todo);
-      } else {
-        this.results = response.data;
-      }
-    });
+  computed: {
+    listedData(){
+      let a = this.$store.getters.ListedData(this.whatToDisplay);
+      console.log(a);
+      return a;
+    }
   },
   methods: {
     refresh: function() {
